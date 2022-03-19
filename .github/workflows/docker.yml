@@ -35,3 +35,9 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ steps.tag.outputs.tag }}
+          labels: |
+            org.opencontainers.image.url=https://git.sr.ht/~gsthnz/satellite
+            org.opencontainers.image.source=https://git.sr.ht/~gsthnz/satellite
+            org.opencontainers.image.version=${{ steps.tag.outputs.tag }}
+            org.opencontainers.image.licenses=AGPL-3.0
+            org.opencontainers.image.title=satellite
