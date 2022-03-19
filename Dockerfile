@@ -1,13 +1,14 @@
-FROM golang:1.16-alpine AS builder
+FROM golang:1.18-alpine AS builder
 
 ENV CGO_ENABLED=0
 RUN apk add git
 
 ARG SATELLITE_VERSION=v1.0.0
 RUN \
-    GOBIN=/tmp go get -u -v git.sr.ht/~gsthnz/satellite@${SATELLITE_VERSION}
+    GOBIN=/tmp go install -v \
+        git.sr.ht/~gsthnz/satellite@${SATELLITE_VERSION}
 
-FROM alpine:3.14 AS worker
+FROM alpine:3.15 AS worker
 
 LABEL maintainer "Timur Demin <me@tdem.in>"
 WORKDIR /app
