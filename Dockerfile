@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine AS builder
+FROM docker.io/library/golang:1.18-alpine AS builder
 
 ENV CGO_ENABLED=0
 RUN apk add git
@@ -8,7 +8,7 @@ RUN \
     GOBIN=/tmp go install -v \
         git.sr.ht/~gsthnz/satellite@${SATELLITE_VERSION}
 
-FROM alpine:3.15 AS worker
+FROM docker.io/library/alpine:3.15 AS worker
 
 LABEL maintainer "Timur Demin <me@tdem.in>"
 WORKDIR /app
