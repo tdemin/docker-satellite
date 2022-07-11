@@ -3,7 +3,7 @@ name: Build & push to GHCR
 on:
   push:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 */7 * *'
 
 jobs:
   docker:

@@ -5,7 +5,7 @@
 This repo holds [Satellite](https://git.sr.ht/~gsthnz/satellite), a Project Gemini static file
 server software, Docker build recipe with GitHub Actions.
 
-The latest version tag is rebuilt daily at UTC 00:00 to ensure the latest dependencies / OS
+The latest version tag is rebuilt weekly to ensure the latest dependencies / OS
 versions.
 
 You can pull the latest tagged version of Satellite:
